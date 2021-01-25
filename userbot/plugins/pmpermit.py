@@ -32,6 +32,26 @@ USER_BOT_WARN_ZERO = "`You were spamming my sweet master's inbox, henceforth you
 USER_BOT_NO_WARN = (f"This is {DEFAULTUSER}'s AntiSpam UserBot and You have Reached his Private Inbox.\n"
                    f"\n**{CUSTOM_MIDDLE_PMP}**\n\n")
 
+if Var.PRIVATE_GROUP_ID is not None:
+    @borg.on(admin_cmd(pattern="ap ?(.*)"))
+    async def approve_p_m(event):
+        if event.fwd_from:
+           return
+        replied_user = await event.client(GetFullUserRequest(event.chat_id))
+        firstname = replied_user.user.first_name
+        reason = event.pattern_match.group(1)
+        chat = await event.get_chat()
+        if event.is_private:
+            if not pmpermit_sql.is_approved(chat.id):
+                if chat.id in PM_WARNS:
+                    del PM_WARNS[chat.id]
+                if chat.id in PREV_REPLY_MESSAGE:
+                    await PREV_REPLY_MESSAGE[chat.id].delete()
+                    del PREV_REPLY_MESSAGE[chat.id]
+                pmpermit_sql.approve(chat.id, reason)
+                await event.edit("Hey there, you have been approved by my sweet master's userbot.. Your name: [{}](tg://user?id={})".format(firstname, chat.id))
+                await asyncio.sleep(1)
+                await event.delete()
 
     @command(pattern="^.block ?(.*)")
     async def approve_p_m(event):
