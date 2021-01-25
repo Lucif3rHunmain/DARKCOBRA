@@ -2,8 +2,6 @@
 # ported to dc by @Lucif3rHun
 
 import os
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, sudo_cmd
 
 import requests
 
