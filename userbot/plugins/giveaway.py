@@ -162,7 +162,7 @@ async def add_ch(event):
             if not in_channels(channel_id):
                 add_channel(channel_id)
         await event.edit("Channels added!")
-        await asyncio.sleep(3)
+        await asyncio.sleep(1)
         await event.delete()
         return
     chat_id = event.chat_id
@@ -174,11 +174,11 @@ async def add_ch(event):
     if not in_channels(chat_id):
         add_channel(chat_id)
         await event.edit("`Added to database!`")
-        await asyncio.sleep(3)
+        await asyncio.sleep(1)
         await event.delete()
     elif in_channels(chat_id):
         await event.edit("`Channel is already is database!`")
-        await asyncio.sleep(3)
+        await asyncio.sleep(1)
         await event.delete()
 
 
@@ -197,16 +197,16 @@ async def remove_ch(event):
     if in_channels(chat_id):
         rm_channel(chat_id)
         await event.edit("Removed from database")
-        await asyncio.sleep(3)
+        await asyncio.sleep(1)
         await event.delete()
     elif in_channels(event.chat_id):
         rm_channel(event.chat_id)
         await event.edit("Removed from database")
-        await asyncio.sleep(3)
+        await asyncio.sleep(1)
         await event.delete()
     elif not in_channels(event.chat_id):
         await event.edit("Channel is already removed from database. ")
-        await asyncio.sleep(3)
+        await asyncio.sleep(1)
         await event.delete()
         
 @borg.on(admin_cmd(pattern="listchannels"))
