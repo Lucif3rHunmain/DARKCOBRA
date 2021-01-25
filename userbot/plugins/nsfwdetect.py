@@ -3,7 +3,6 @@
 
 import os
 import requests
-from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
 @borg.on(admin_cmd(pattern="detect$", outgoing=True))
@@ -52,10 +51,3 @@ async def detect(event):
         link_preview=False,
         parse_mode="HTML",
     )
-
-CMD_HELP.update(
-    {
-        "nsfwdetect": "`.detect`"
-                "\nUsage: Reply .detect command to any image or non animated sticker to detect the nudity in that"
-    }
-)
