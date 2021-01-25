@@ -1,12 +1,9 @@
-  
-import asyncio
+ import asyncio
 import base64
 import os
 
 from telethon import functions, types
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-
-from . import BOTLOG, BOTLOG_CHATID
 
 
 @bot.on(admin_cmd(pattern="spam (.*)"))
@@ -39,17 +36,17 @@ async def spammer(e):
             else:
                 await e.client.send_message(e.chat_id, spam_message)
             await asyncio.sleep(0.1)
-        if BOTLOG:
+        if LOGGER:
             if e.is_private:
                 await e.client.send_message(
-                    BOTLOG_CHATID,
+                    LOGGER_GROUP,
                     "#SPAM\n"
                     + f"Spam was executed successfully in [User](tg://user?id={e.chat_id}) chat with {counter} messages of \n"
                     + f"`{spam_message}`",
                 )
             else:
                 await e.client.send_message(
-                    BOTLOG_CHATID,
+                    LOGGER_GROUP,
                     "#SPAM\n"
                     + f"Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat  with {counter} messages of \n"
                     + f"`{spam_message}`",
@@ -82,15 +79,15 @@ async def spammer(e):
                 except:
                     pass
                 await asyncio.sleep(0.5)
-            if BOTLOG:
+            if LOGGER:
                 if e.is_private:
                     await e.client.send_message(
-                        BOTLOG_CHATID,
+                        LOGGER_GROUP,
                         "#SPAM\n"
                         + f"Spam was executed successfully in [User](tg://user?id={e.chat_id}) chat with {counter} times with below message",
                     )
                     sandy = await e.client.send_file(
-                        BOTLOG_CHATID, downloaded_file_name
+                        LOGGER_GROUP, downloaded_file_name
                     )
                     try:
                         await e.client(
@@ -108,12 +105,12 @@ async def spammer(e):
                     os.remove(downloaded_file_name)
                 else:
                     await e.client.send_message(
-                        BOTLOG_CHATID,
+                        LOGGER_GROUP,
                         "#SPAM\n"
                         + f"Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) with {counter} times with below message",
                     )
                     sandy = await e.client.send_file(
-                        BOTLOG_CHATID, downloaded_file_name
+                        LOGGER_GROUP, downloaded_file_name
                     )
                     try:
                         await e.client(
@@ -138,17 +135,17 @@ async def spammer(e):
             else:
                 await e.client.send_message(e.chat_id, spam_message)
             await asyncio.sleep(0.5)
-        if BOTLOG:
+        if LOGGER:
             if e.is_private:
                 await e.client.send_message(
-                    BOTLOG_CHATID,
+                    LOGGER_GROUP,
                     "#SPAM\n"
                     + f"Spam was executed successfully in [User](tg://user?id={e.chat_id}) chat with {counter} messages of \n"
                     + f"`{spam_message}`",
                 )
             else:
                 await e.client.send_message(
-                    BOTLOG_CHATID,
+                    LOGGER_GROUP,
                     "#SPAM\n"
                     + f"Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat  with {counter} messages of \n"
                     + f"`{spam_message}`",
@@ -185,17 +182,17 @@ async def spammer(e):
             else:
                 await e.client.send_message(e.chat_id, spam_message)
             await asyncio.sleep(0.5)
-        if BOTLOG:
+        if LOGGER:
             if e.is_private:
                 await e.client.send_message(
-                    BOTLOG_CHATID,
+                    LOGGER_GROUP,
                     "#SPAM\n"
                     + f"Spam was executed successfully in [User](tg://user?id={e.chat_id}) chat with {counter} messages of \n"
                     + f"`{spam_message}`",
                 )
             else:
                 await e.client.send_message(
-                    BOTLOG_CHATID,
+                    LOGGER_GROUP,
                     "#SPAM\n"
                     + f"Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat  with {counter} messages of \n"
                     + f"`{spam_message}`",
@@ -224,15 +221,15 @@ async def spammer(e):
                 except:
                     pass
                 await asyncio.sleep(1)
-            if BOTLOG:
+            if LOGGER:
                 if e.is_private:
                     await e.client.send_message(
-                        BOTLOG_CHATID,
+                        LOGGER_GROUP,
                         "#SPAM\n"
                         + f"Spam was executed successfully in [User](tg://user?id={e.chat_id}) chat with {counter} times with below message",
                     )
                     sandy = await e.client.send_file(
-                        BOTLOG_CHATID, downloaded_file_name
+                        LOGGER_GROUP, downloaded_file_name
                     )
                     try:
                         await e.client(
@@ -250,12 +247,12 @@ async def spammer(e):
                     os.remove(downloaded_file_name)
                 else:
                     await e.client.send_message(
-                        BOTLOG_CHATID,
+                        LOGGER_GROUP,
                         "#SPAM\n"
                         + f"Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) with {counter} times with below message",
                     )
                     sandy = await e.client.send_file(
-                        BOTLOG_CHATID, downloaded_file_name
+                        LOGGER_GROUP, downloaded_file_name
                     )
                     try:
                         await e.client(
@@ -280,17 +277,17 @@ async def spammer(e):
             else:
                 await e.client.send_message(e.chat_id, spam_message)
             await asyncio.sleep(0.5)
-        if BOTLOG:
+        if LOGGER:
             if e.is_private:
                 await e.client.send_message(
-                    BOTLOG_CHATID,
+                    LOGGER_GROUP,
                     "#SPAM\n"
                     + f"Spam was executed successfully in [User](tg://user?id={e.chat_id}) chat with {counter} messages of \n"
                     + f"`{spam_message}`",
                 )
             else:
                 await e.client.send_message(
-                    BOTLOG_CHATID,
+                    LOGGER_GROUP,
                     "#SPAM\n"
                     + f"Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat  with {counter} messages of \n"
                     + f"`{spam_message}`",
@@ -307,16 +304,16 @@ async def tmeme(e):
     await e.delete()
     for letter in message:
         await e.respond(letter)
-    if BOTLOG:
+    if LOGGER:
         if e.is_private:
             await e.client.send_message(
-                BOTLOG_CHATID,
+                LOGGER_GROUP,
                 "#CSPAM\n"
                 + f"Letter Spam was executed successfully in [User](tg://user?id={e.chat_id}) chat with : `{message}`",
             )
         else:
             await e.client.send_message(
-                BOTLOG_CHATID,
+                LOGGER_GROUP,
                 "#CSPAM\n"
                 + f"Letter Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat with : `{message}`",
             )
@@ -330,16 +327,16 @@ async def tmeme(e):
     await e.delete()
     for word in message:
         await e.respond(word)
-    if BOTLOG:
+    if LOGGER:
         if e.is_private:
             await e.client.send_message(
-                BOTLOG_CHATID,
+                LOGGER_GROUP,
                 "#WSPAM\n"
                 + f"Word Spam was executed successfully in [User](tg://user?id={e.chat_id}) chat with : `{message}`",
             )
         else:
             await e.client.send_message(
-                BOTLOG_CHATID,
+                LOGGER_GROUP,
                 "#WSPAM\n"
                 + f"Word Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat with : `{message}`",
             )
@@ -358,16 +355,16 @@ async def spammer(e):
     for _ in range(counter):
         await e.respond(spam_message)
         await asyncio.sleep(spamDelay)
-    if BOTLOG:
+    if LOGGER:
         if e.is_private:
             await e.client.send_message(
-                BOTLOG_CHATID,
+                LOGGER_GROUP,
                 "#DELAYSPAM\n"
                 + f"Delay Spam was executed successfully in [User](tg://user?id={e.chat_id}) chat with {spamDelay}s Delay and {counter} times with : `{message}`",
             )
         else:
             await e.client.send_message(
-                BOTLOG_CHATID,
+                LOGGER_GROUP,
                 "#DELAYCSPAM\n"
                 + f"Delay Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat with {spamDelay}s Delay and {counter} times with: `{message}`",
             )
