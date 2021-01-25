@@ -47,6 +47,6 @@ CMD_HELP.update(
     {
         "gita":".verse <chapter_number> <verse_number> "
         "\nUsage: Get a specific verse from a particular chapter \n\n"
-        "gita":".verse <chapter_number> <verse_number> hi "
+        "gita":".verse <chapter_number> <verse_number> hi"
         "\nUsage: Get a specific verse from a particular chapter in hindi.\n\n"
     }
