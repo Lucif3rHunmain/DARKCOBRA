@@ -11,8 +11,6 @@ from telethon import functions, types
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 
-@bot.on(admin_cmd(pattern="spam (.*)"))
-@bot.on(sudo_cmd(pattern="spam (.*)", allow_sudo=True))
 async def spammer(e):
     if e.fwd_from:
         return
