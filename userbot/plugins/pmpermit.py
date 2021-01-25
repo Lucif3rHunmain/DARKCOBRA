@@ -30,7 +30,6 @@ CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRE
 
 USER_BOT_WARN_ZERO = "`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my master's userbot⭕️.`\n**Now GTFO, i'm busy**"
 USER_BOT_NO_WARN = (f"This is {DEFAULTUSER}'s AntiSpam UserBot and You have Reached his Private Inbox.\n"
-                   "Don't Spam His Inbox and Read the Message below Given or else you will be Reported and Blocked.\n"
                    f"\n**{CUSTOM_MIDDLE_PMP}**\n\n")
 
 
