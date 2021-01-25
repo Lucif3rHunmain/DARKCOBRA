@@ -5,31 +5,34 @@ import io
 from userbot.uniborgConfig import Config
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from telethon.tl.functions.users import GetFullUserRequest
-from telethon import events , errors , functions , types
-from userbot import ALIVE_NAME , CUSTOM_PMPERMIT
+from telethon import events, errors, functions, types
+from userbot import ALIVE_NAME, CUSTOM_PMPERMIT
 from userbot.utils import admin_cmd
 from userbot import CMD_HELP
 
-PMPERMIT_PIC = os.environ.get ( "PMPERMIT_PIC" , None )
-if PMPERMIT_PIC is None :
-    WARN_PIC = "https://telegra.ph/file/db92ed3d77377856ef911.mp4"
-else :
-    WARN_PIC = PMPERMIT_PIC
+PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
+if PMPERMIT_PIC is None:
+  WARN_PIC = "https://telegra.ph/file/db92ed3d77377856ef911.mp4"
+else:
+  WARN_PIC = PMPERMIT_PIC
 
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 
+
 PM_ON_OFF = Config.PM_DATA
 
+
 DEFAULTUSER = (
-    str ( ALIVE_NAME ) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
+               str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 )
-CUSTOM_MIDDLE_PMP = str (
-    CUSTOM_PMPERMIT ) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS A CRIME"
+CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS A CRIME" 
 
 USER_BOT_WARN_ZERO = "`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my master's userbot⭕️.`\n**Now GTFO, i'm busy**"
-USER_BOT_NO_WARN = (f"This is {DEFAULTUSER}'s AntiSpam UserBot and You have Reached his Private Inbox.\n"
-                    f"\n**{CUSTOM_MIDDLE_PMP}**\n\n")
+USER_BOT_NO_WARN = ("`Hello, This Is An Antispam Userbot Service⚠️.You have found your way here to my sweet master's ,`"
+                   f"{DEFAULTUSER}'s inbox. He is little busy right now..so please follow the below guidelines so that he can decide and approve you\n"
+                   f"\n**{CUSTOM_MIDDLE_PMP}**\n\n")
+
 
 if Var.PRIVATE_GROUP_ID is not None:
     @borg.on(admin_cmd(pattern="ap ?(.*)"))
@@ -60,10 +63,10 @@ if Var.PRIVATE_GROUP_ID is not None:
         if event.is_private:
             if not pmpermit_sql.is_approved(chat.id):
                 if not chat.id in PM_WARNS:
-                    pmpermit_sql.approve(chat.id, "outgoing")
+                    pmpermit_sql.disapprove(chat.id, "outgoing")
                     bruh = "**This user has been auto-approved.. Reason: Outgoing messages..**"
                     rko = await borg.send_message(event.chat_id, bruh)
-                    await asyncio.sleep(4)
+                    await asyncio.sleep(1)
                     await rko.delete()
 
 
