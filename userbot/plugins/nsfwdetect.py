@@ -8,7 +8,6 @@ from userbot.utils import admin_cmd, sudo_cmd
 import requests
 
 @borg.on(admin_cmd(pattern="detect$", outgoing=True))
-@borg.on(sudo_cmd(pattern="detect$", allow_sudo=True))
 async def detect(event):
     if Config.DEEP_AI is None:
         return await edit_delete(
@@ -57,7 +56,7 @@ async def detect(event):
 
 CMD_HELP.update(
     {
-        "nsfwdetect": ".detect by replying to a media"
-                "\nUsage: __Reply .detect command to any image or non animated sticker to detect the nudity in that__"
+        "nsfwdetect": "`.detect`"
+                "\nUsage: Reply .detect command to any image or non animated sticker to detect the nudity in that"
     }
 )
