@@ -19,7 +19,7 @@ import traceback
 import datetime
 import requests
 
-from .Config import Config
+from userbot.uniborgConfig import Config
 from telethon.tl.functions.messages import GetPeerDialogsRequest
 
 from typing import List
