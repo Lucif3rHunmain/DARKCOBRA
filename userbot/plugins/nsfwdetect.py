@@ -2,8 +2,8 @@
 # ported to dc by @Lucif3rHun
 
 import os
-
 import requests
+from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
 @borg.on(admin_cmd(pattern="detect$", outgoing=True))
