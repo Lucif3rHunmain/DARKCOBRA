@@ -52,7 +52,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     del PREV_REPLY_MESSAGE[chat.id]
                 pmpermit_sql.approve(chat.id, reason)
                 await event.edit("Hey there, you have been approved by my sweet master's userbot.. Your name: [{}](tg://user?id={})".format(firstname, chat.id))
-                await asyncio.sleep(3)
+                await asyncio.sleep(1)
                 await event.delete()
 
 @command(pattern="^.block ?(.*)")
@@ -89,7 +89,8 @@ async def approve_p_m(event):
         if pmpermit_sql.is_approved(chat.id):
             pmpermit_sql.disapprove(chat.id)
             await event.edit("Disapproved [{}](tg://user?id={})".format(firstname, chat.id))
-            
+            await asyncio.sleep(1)
+            await event.delete()
 
 
 @command(pattern="^.listap")
