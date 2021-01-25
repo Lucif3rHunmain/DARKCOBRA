@@ -1,7 +1,12 @@
 import asyncio
 import base64
 import os
+from asyncio import wait
+from userbot import CMD_HELP
 
+
+
+from userbot.events import register
 from telethon import functions, types
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
