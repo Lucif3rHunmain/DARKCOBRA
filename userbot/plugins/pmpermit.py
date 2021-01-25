@@ -12,7 +12,7 @@ from userbot import CMD_HELP
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
-  WARN_PIC = "https://telegra.ph/file/db92ed3d77377856ef911.mp4"
+  WARN_PIC = "https://telegra.ph/file/771b6db93ddc361f75a6e.jpg"
 else:
   WARN_PIC = PMPERMIT_PIC
 
@@ -173,7 +173,7 @@ async def on_new_private_message(event):
 async def do_pm_permit_action(chat_id, event):
     if chat_id not in PM_WARNS:
         PM_WARNS.update({chat_id: 0})
-    if PM_WARNS[chat_id] == 5:
+    if PM_WARNS[chat_id] == 3:
         r = await event.reply(USER_BOT_WARN_ZERO)
         await asyncio.sleep(1)
         await event.client(functions.contacts.BlockRequest(chat_id))
