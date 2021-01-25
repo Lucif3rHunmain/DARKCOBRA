@@ -52,3 +52,9 @@ async def detect(event):
         link_preview=False,
         parse_mode="HTML",
     )
+CMD_HELP.update(
+    {
+        "nsfw": ".detect"
+                \nUsage: __Reply .detect command to any image or non animated sticker to detect the nudity in that__"
+}
+)
