@@ -29,12 +29,8 @@ DEFAULTUSER = (
 CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS A CRIME" 
 
 USER_BOT_WARN_ZERO = "`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my master's userbot⭕️.`\n**Now GTFO, i'm busy**"
-USER_BOT_NO_WARN = ("`Hello, This Is An Antispam Userbot Service⚠️.You have found your way here to my sweet master's ,`"
-                   f"{DEFAULTUSER}'s inbox. He is little busy right now..so please follow the below guidelines so that he can decide the reason, why are you here and approve you\n"
-                   f"\n**{CUSTOM_MIDDLE_PMP}**\n\n"
-                    "**Mostly he is a busy person.. And told me to take care of his inbox..🤖**\n\n"
-                    "❤️Please Register Your Request/query!❤️\nSend `/start` To Register Your Request!! 🔥\n"
-                    "**Okay now please send a** 🔥 `/start` 🔥 **To Start A Valid Conversation with him..!!❤**")
+USER_BOT_NO_WARN = (f"{DEFAULTUSER}'s Personal Inbox.\n"
+                   f"\n**{CUSTOM_MIDDLE_PMP}**\n\n")
 
 
 if Var.PRIVATE_GROUP_ID is not None:
@@ -55,22 +51,8 @@ if Var.PRIVATE_GROUP_ID is not None:
                     del PREV_REPLY_MESSAGE[chat.id]
                 pmpermit_sql.approve(chat.id, reason)
                 await event.edit("Hey there, you have been approved by my sweet master's userbot.. Your name: [{}](tg://user?id={})".format(firstname, chat.id))
-                await asyncio.sleep(3)
+                await asyncio.sleep(1)
                 await event.delete()
-
-    @bot.on(events.NewMessage(outgoing=True))
-    async def you_dm_niqq(event):
-        if event.fwd_from:
-            return
-        chat = await event.get_chat()
-        if event.is_private:
-            if not pmpermit_sql.is_approved(chat.id):
-                if not chat.id in PM_WARNS:
-                    pmpermit_sql.approve(chat.id, "outgoing")
-                    bruh = "**This user has been auto-approved.. Reason: Outgoing messages..**"
-                    rko = await borg.send_message(event.chat_id, bruh)
-                    await asyncio.sleep(4)
-                    await rko.delete()
 
 
     @command(pattern="^.block ?(.*)")
@@ -191,7 +173,7 @@ if Var.PRIVATE_GROUP_ID is not None:
     async def do_pm_permit_action(chat_id, event):
         if chat_id not in PM_WARNS:
             PM_WARNS.update({chat_id: 0})
-        if PM_WARNS[chat_id] == 5:
+        if PM_WARNS[chat_id] == 3:
             r = await event.reply(USER_BOT_WARN_ZERO)
             await asyncio.sleep(1)
             await event.client(functions.contacts.BlockRequest(chat_id))
