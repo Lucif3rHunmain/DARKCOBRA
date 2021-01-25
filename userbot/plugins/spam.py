@@ -157,8 +157,6 @@ async def spammer(e):
         await edit_or_reply(e, "try again something went wrong or check `.info spam`")
 
 
-@bot.on(admin_cmd(pattern="bigspam (.*)"))
-@bot.on(sudo_cmd(pattern="bigspam (.*)", allow_sudo=True))
 async def spammer(e):
     if e.fwd_from:
         return
@@ -299,8 +297,6 @@ async def spammer(e):
         await edit_or_reply(e, "try again something went wrong or check `.info spam`")
 
 
-@bot.on(admin_cmd("cspam (.*)"))
-@bot.on(sudo_cmd(pattern="cspam (.*)", allow_sudo=True))
 async def tmeme(e):
     cspam = str("".join(e.text.split(maxsplit=1)[1:]))
     message = cspam.replace(" ", "")
@@ -321,9 +317,6 @@ async def tmeme(e):
                 + f"Letter Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat with : `{message}`",
             )
 
-
-@bot.on(admin_cmd("wspam (.*)"))
-@bot.on(sudo_cmd(pattern="wspam (.*)", allow_sudo=True))
 async def tmeme(e):
     wspam = str("".join(e.text.split(maxsplit=1)[1:]))
     message = wspam.split()
@@ -344,9 +337,6 @@ async def tmeme(e):
                 + f"Word Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat with : `{message}`",
             )
 
-
-@bot.on(admin_cmd("delayspam (.*)"))
-@bot.on(sudo_cmd(pattern="delayspam (.*)", allow_sudo=True))
 async def spammer(e):
     if e.fwd_from:
         return
