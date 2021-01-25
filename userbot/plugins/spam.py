@@ -1,4 +1,4 @@
- import asyncio
+import asyncio
 import base64
 import os
 
@@ -368,21 +368,21 @@ async def spammer(e):
                 "#DELAYCSPAM\n"
                 + f"Delay Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat with {spamDelay}s Delay and {counter} times with: `{message}`",
             )
-            
+
 
 CMD_HELP.update(
     {
         "spam": ".spam <count> <text>"
-        "\nUsage: spams the current chat, the current limit for this is from 1 to 99.\n\n"
-        ".spam .spam <count> reply to media"
-        "\nUsage: Spams the current chat with number you did put in <no of spam>.\n\n"
-        ".bigspam <no of msgs> <your msg>"
-        "\nUsage: Spams the current chat, the current limit is above 100.\n\n"
-        ".cspam: .cspam <text>"
-        "\nUsage: Spam the text letter by letter."
-        ".wspam: .wspam <text>"
-        "\nUsage: Spam the text word by word."
-        ".delayspam <delay time> <count> <msg>"
-        "\nUsage: Spams the current chat with with the input msgs with a delay time that has been given as its input.\n\n"
+                "\nUsage: spams the current chat, the current limit for this is from 1 to 99.\n\n"
+                ".spam .spam <count> reply to media"
+                "\nUsage: Spams the current chat with number you did put in <no of spam>.\n\n"
+                ".bigspam <no of msgs> <your msg>"
+                "\nUsage: Spams the current chat, the current limit is above 100.\n\n"
+                ".cspam: .cspam <text>"
+                "\nUsage: Spam the text letter by letter."
+                ".wspam: .wspam <text>"
+                "\nUsage: Spam the text word by word."
+                ".delayspam <delay time> <count> <msg>"
+                "\nUsage: Spams the current chat with with the input msgs with a delay time that has been given as its input.\n\n"
     }
 )
