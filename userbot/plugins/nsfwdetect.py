@@ -5,9 +5,10 @@ import os
 import requests
 from userbot import CMD_HELP
 from userbot.utils import edit_or_reply, edit_delete, admin_cmd
+from userbot.uniborgConfig import Config
 
+DEEP_AI = os.environ.get("DEEP_AI", None)
 @borg.on(admin_cmd(pattern="detect$", outgoing=True))
-
 async def detect(event):
     if Config.DEEP_AI is None:
         return await edit_delete(
