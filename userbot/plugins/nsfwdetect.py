@@ -3,9 +3,12 @@
 
 import os
 from userbot import CMD_HELP
+from userbot.utils import admin_cmd, sudo_cmd
 
 import requests
 
+@borg.on(admin_cmd(pattern="update ?(.*)", outgoing=True))
+@borg.on(sudo_cmd(pattern="update ?(.*)", outgoing=True))
 async def detect(event):
     if Config.DEEP_AI is None:
         return await edit_delete(
