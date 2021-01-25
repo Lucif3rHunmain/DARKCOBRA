@@ -2,6 +2,7 @@
 # ported to dc by @Lucif3rHun
 
 import os
+from userbot import CMD_HELP
 
 import requests
 
