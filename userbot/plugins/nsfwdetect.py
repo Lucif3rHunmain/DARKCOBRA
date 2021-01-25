@@ -3,7 +3,8 @@
 
 import os
 import requests
-from userbot.utils import admin_cmd
+from userbot import CMD_HELP
+from userbot.utils import edit_delete, edit_or_reply, edit_delete, admin_cmd
 
 @borg.on(admin_cmd(pattern="detect$", outgoing=True))
 
