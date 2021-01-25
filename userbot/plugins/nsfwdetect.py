@@ -5,7 +5,9 @@ import os
 
 import requests
 
-@borg.on(admin_cmd(pattern="detect$", outgoing=True))
+
+@bot.on(admin_cmd(pattern="detect$", outgoing=True))
+@bot.on(sudo_cmd(pattern="detect$", allow_sudo=True))
 async def detect(event):
     if Config.DEEP_AI is None:
         return await edit_delete(
@@ -50,7 +52,6 @@ async def detect(event):
         link_preview=False,
         parse_mode="HTML",
     )
-
 
 CMD_HELP.update(
     {
