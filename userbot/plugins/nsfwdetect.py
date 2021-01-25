@@ -4,7 +4,7 @@
 import os
 
 import requests
-
+from userbot.utils import admin_cmd
 
 @borg.on(admin_cmd(pattern="detect$", outgoing=True))
 @borg.on(sudo_cmd(pattern="detect$", allow_sudo=True))
