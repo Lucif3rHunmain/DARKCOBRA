@@ -1,7 +1,7 @@
 # Author: Shubhendra Kushwaha (@TheShubhendra)
 # Email: shubhendrakushwaha94@gmail.com
 import pygita
-
+from userbot.uniborgConfig import Config
 from userbot.utils import admin_cmd
 
 CLIENT_ID = Config.GITA_CLIENT_ID
