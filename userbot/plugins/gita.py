@@ -46,9 +46,9 @@ async def gita(event):
 
 CMD_HELP.update(
     {
-        "geeta":".verse <chapter_number> <verse_number> "
+        "geeta":".gita <chapter_number> <verse_number> "
         "\nUsage: Get a specific verse from a particular chapter \n\n"
-        ".verse <chapter_number> <verse_number> hi"
+        ".gita <chapter_number> <verse_number> hi"
         "\nUsage: Get a specific verse from a particular chapter in hindi.\n\n"
     }
 )
