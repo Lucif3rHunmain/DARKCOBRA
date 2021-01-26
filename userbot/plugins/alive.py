@@ -44,4 +44,4 @@ async def alive(yes):
     pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={Lucif3r})\n"
     on = await borg.send_file(yes.chat_id, file=file1, caption=pm_caption)
     await asyncio.sleep(10)
-    await yes.delete()
+    await on.delete()
