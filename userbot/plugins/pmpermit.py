@@ -10,30 +10,31 @@ from userbot import ALIVE_NAME, CUSTOM_PMPERMIT
 from userbot.utils import admin_cmd
 from userbot import CMD_HELP
 
-PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-if PMPERMIT_PIC is None:
-  WARN_PIC = "https://telegra.ph/file/771b6db93ddc361f75a6e.jpg"
-else:
-  WARN_PIC = PMPERMIT_PIC
+async def pm(menu):
+ PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
+ if PMPERMIT_PIC is None:
+   WARN_PIC = "https://telegra.ph/file/771b6db93ddc361f75a6e.jpg"
+ else:
+   WARN_PIC = PMPERMIT_PIC
 
-PM_WARNS = {}
-PREV_REPLY_MESSAGE = {}
-
-
-PM_ON_OFF = Config.PM_DATA
+ PM_WARNS = {}
+ PREV_REPLY_MESSAGE = {}
 
 
-DEFAULTUSER = (
-               str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
-)
-CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS A CRIME" 
+ PM_ON_OFF = Config.PM_DATA
 
-USER_BOT_WARN_ZERO = "`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my master's userbot⭕️.`\n**Now GTFO, i'm busy**"
-USER_BOT_NO_WARN = ("`Hello, This Is An Antispam Userbot Service⚠️.You have found your way here to my sweet master's ,`"
-                   f"{DEFAULTUSER}'s inbox. He is little busy right now..so please follow the below guidelines so that he can decide and approve you\n"
-                   f"\n**{CUSTOM_MIDDLE_PMP}**\n\n")
-await asyncio.sleep(5)
-await event.delete()
+
+ DEFAULTUSER = (
+                str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
+ )
+ CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS A CRIME" 
+
+ USER_BOT_WARN_ZERO = "`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my master's userbot⭕️.`\n**Now GTFO, i'm busy**"
+ USER_BOT_NO_WARN = ("`Hello, This Is An Antispam Userbot Service⚠️.You have found your way here to my sweet master's ,`"
+                    f"{DEFAULTUSER}'s inbox. He is little busy right now..so please follow the below guidelines so that he can decide and approve you\n"
+                    f"\n**{CUSTOM_MIDDLE_PMP}**\n\n")
+ await asyncio.sleep(5)
+ await menu.delete()
 
 if Var.PRIVATE_GROUP_ID is not None:
     @borg.on(admin_cmd(pattern="ap ?(.*)"))
