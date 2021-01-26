@@ -1,6 +1,5 @@
-# Thanks to Sipak bro and Aryan.. 
-# animation Idea by @ItzSipak && @Hell boy_pikachu
-# Made by @hellboi_atul ....and thanks to @Crackexy for the logos...
+# Thanks to Sipak bro and Aryan
+# Made by @hellboi_atul.
 # Kang with credits else gay...
 import asyncio
 import os
@@ -49,6 +48,5 @@ async def hmm(yes):
     pm_caption += f"➾ **ᴜᴘᴛɪᴍᴇ** ☞ {uptime}\n\n"
     pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={ghanti})\n"
     on = await borg.send_file(yes.chat_id, file=file1,caption=pm_caption)
-    await asyncio.sleep(5)
-    await yes.delete()
+    await yes.delete(5)
 
