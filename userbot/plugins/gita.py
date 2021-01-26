@@ -1,5 +1,6 @@
 # Author: Shubhendra Kushwaha (@TheShubhendra)
 # Email: shubhendrakushwaha94@gmail.com
+import requests
 import pygita
 import os
 from userbot.utils import admin_cmd
