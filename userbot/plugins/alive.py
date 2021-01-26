@@ -18,26 +18,14 @@ from telethon.tl.types import ChannelParticipantsAdmins
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
 
 # Thanks to Sipak bro and Aryan.. 
-# animation Idea by @ItzSipak && @Hell boy_pikachu
-# Made by @hellboi_atul ....and thanks to @Crackexy for the logos...
+# Made by @hellboi_atul and Edited by Lucif3rHun
 # Kang with credits else gay...
-# alive.py for DC(DARK COBRA)
-global ghanti
-ghanti = borg.uid
-edit_time = 5
+# alive.py for Lucif3rHun's Personal UserBot
+global Lucif3rHun
+Lucif3rhun = borg.uid
 """ =======================CONSTANTS====================== """
 file1 = "https://telegra.ph/file/771b6db93ddc361f75a6e.jpg"
 """ =======================CONSTANTS====================== """
-
-
-@borg.on(admin_cmd(pattern=r"alive"))
-@borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
-
-async def hmm(yes):
-    chat = await yes.get_chat()
-    global ghanti
-    ghanti = borg.uid
-    uptime = await dcdef.get_readable_time((time.time() - Lastupdate))
     pm_caption = "** ʟᴜᴄɪғ𝟹ʀʜᴜɴ's ᴜsᴇʀʙᴏᴛ 𝙸𝚂 𝙾𝙽𝙻𝙸𝙽𝙴**\n\n"
     pm_caption += "**Yes Master, Am Alive And Systems Are Working Perfectly As It Should Be...**\n\n"
     pm_caption += "✘ About My System ✘\n\n"
@@ -47,6 +35,12 @@ async def hmm(yes):
     pm_caption += "➾ **ᴇᴅɪᴛᴇᴅ ʙʏ** ☞ [ʟᴜᴄɪғ𝟹ʀʜᴜɴ](@Lucif3rHun)\n\n"
     pm_caption += f"➾ **ᴜᴘᴛɪᴍᴇ** ☞ {uptime}\n\n"
     pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={ghanti})\n"
-    on = await borg.send_file(yes.chat_id, file=file1,caption=pm_caption)
-    await yes.delete(5)
 
+@borg.on(admin_cmd(pattern="alive"))
+async def alive(yes):
+    await yes.get_chat()
+    global Lucif3rHun
+    Lucif3rhun = borg.uid
+    await yes.delete()
+    on = await borg.send_file(yes.chat_id, file=file1, caption=pm_caption)
+    await yes.delete(5)
