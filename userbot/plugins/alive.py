@@ -21,8 +21,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
 # Made by @hellboi_atul and Edited by Lucif3rHun
 # Kang with credits else gay...
 # alive.py for Lucif3rHun's Personal UserBot
-global Lucif3rHun
-Lucif3rhun = borg.uid
+global Lucif3r
+Lucif3r = borg.uid
 """ =======================CONSTANTS====================== """
 file1 = "https://telegra.ph/file/771b6db93ddc361f75a6e.jpg"
 """ =======================CONSTANTS====================== """
@@ -34,13 +34,13 @@ file1 = "https://telegra.ph/file/771b6db93ddc361f75a6e.jpg"
     pm_caption += "➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** ☞ [𝙳𝙰𝚁𝙺-𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA/DARKCOBRA)\n"
     pm_caption += "➾ **ᴇᴅɪᴛᴇᴅ ʙʏ** ☞ [ʟᴜᴄɪғ𝟹ʀʜᴜɴ](@Lucif3rHun)\n\n"
     pm_caption += f"➾ **ᴜᴘᴛɪᴍᴇ** ☞ {uptime}\n\n"
-    pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={ghanti})\n"
+    pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={Lucif3r})\n"
 
 @borg.on(admin_cmd(pattern="alive"))
 async def alive(yes):
     await yes.get_chat()
-    global Lucif3rHun
-    Lucif3rhun = borg.uid
+    global Lucif3r
+    Lucif3r = borg.uid
     await yes.delete()
     on = await borg.send_file(yes.chat_id, file=file1, caption=pm_caption)
     await yes.delete(5)
