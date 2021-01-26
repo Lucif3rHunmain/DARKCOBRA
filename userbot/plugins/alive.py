@@ -38,7 +38,6 @@ async def hmm(yes):
     chat = await yes.get_chat()
     global ghanti
     ghanti = borg.uid
-    await yes.delete()
     uptime = await dcdef.get_readable_time((time.time() - Lastupdate))
     pm_caption = "** ʟᴜᴄɪғ𝟹ʀʜᴜɴ's ᴜsᴇʀʙᴏᴛ 𝙸𝚂 𝙾𝙽𝙻𝙸𝙽𝙴**\n\n"
     pm_caption += "**Yes Master, Am Alive And Systems Are Working Perfectly As It Should Be...**\n\n"
