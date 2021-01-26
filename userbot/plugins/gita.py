@@ -3,7 +3,7 @@
 import requests
 import pygita
 import os
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, edit_delete
 from userbot import CMD_HELP
 from userbot.uniborgConfig import Config
 
@@ -16,7 +16,7 @@ CLIENT_SECRET = os.environ.get("GITA_CLIENT_SECRET", None)
 async def gita(event):
     """ To get a specific verse from a specific chapter in English. """
     if CLIENT_ID is None or CLIENT_SECRET is None:
-        await event.edit(
+        await event.edit_delete(
             event,
             "`Please add required GITA_CLIENT_SECRET and GITA_CLIENT_ID env var`",
             10,
@@ -33,7 +33,7 @@ async def gita(event):
 async def gita(event):
     """ To get a specific verse from a specific chapter in Hindi. """
     if CLIENT_ID is None or CLIENT_SECRET is None:
-        await event.edit(
+        await event.edit_delete(
             event,
             "`Please add required GITA_CLIENT_SECRET and GITA_CLIENT_ID env var`",
             10,
