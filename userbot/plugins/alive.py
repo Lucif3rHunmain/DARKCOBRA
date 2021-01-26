@@ -74,6 +74,6 @@ async def hmm(yes):
     
     await asyncio.sleep(edit_time)
     ok7 = await borg.edit_message(yes.chat_id, ok6, file=file4)
-    await event.sleep(10)
+    await asyncio.sleep(10)
     await event.delete()
 
