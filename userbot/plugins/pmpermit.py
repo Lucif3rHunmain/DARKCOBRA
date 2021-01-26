@@ -32,7 +32,7 @@ CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRE
 USER_BOT_WARN_ZERO = "`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my master's userbot⭕️.`\n**Now GTFO, i'm busy**"
 USER_BOT_NO_WARN = ("`Hello, This Is An Antispam Userbot Service⚠️.You have found your way here to my sweet master's ,`"
                     f"{DEFAULTUSER}'s inbox. He is little busy right now..so please follow the below guidelines so that he can decide and approve you\n"
-                    f"\n**{CUSTOM_MIDDLE_PMP**\n\n")
+                    f"\n**{CUSTOM_MIDDLE_PMP}**\n\n")
 
 if Var.PRIVATE_GROUP_ID is not None:
     @borg.on(admin_cmd(pattern="ap ?(.*)"))
