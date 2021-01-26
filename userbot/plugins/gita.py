@@ -1,13 +1,12 @@
 # Author: Shubhendra Kushwaha (@TheShubhendra)
 # Email: shubhendrakushwaha94@gmail.com
 import pygita
-import os
 from userbot.utils import admin_cmd
 from userbot import CMD_HELP
 from userbot.uniborgConfig import Config
 
-CLIENT_ID = os.environ.get("GITA_CLIENT_ID", None)
-CLIENT_SECRET = os.environ.get("GITA_CLIENT_SECRET", None)
+CLIENT_ID = Config.GITA_CLIENT_ID
+CLIENT_SECRET = Config.GITA_CLIENT_SECRET
 """ Get API crendentials from https://bhagavadgita.io . """
 
 
