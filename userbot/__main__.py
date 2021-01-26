@@ -17,6 +17,11 @@ async def add_bot(bot_token):
     bot.me = await bot.get_me()
     bot.uid = telethon.utils.get_peer_id(bot.me)
 
+async def startup_log_all_done():
+    try:
+        await bot.send_message(f"Lucif3rHun's Personal UserBot has been deployed.\nSend `.alive` to see if the bot is working.")
+    except BaseException:
+        print("Either PRIVATE_GROUP_ID is wrong or you have left the group.")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
@@ -60,7 +65,7 @@ if LOAD_ASSISTANT == True:
 else:
     print("Assitant is Not Loading As U Have Disabled")
 
-print("DARK COBRA userbot AND YOUR ASSISTANT is Active Enjoy Join @DarkCobra_Support For Updates.")
+print("Lucif3rHun's Personal UserBot has been deployed successfully")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
