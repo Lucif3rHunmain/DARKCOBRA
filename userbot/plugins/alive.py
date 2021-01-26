@@ -26,6 +26,7 @@ Lucif3r = borg.uid
 """ =======================CONSTANTS====================== """
 file1 = "https://telegra.ph/file/771b6db93ddc361f75a6e.jpg"
 """ =======================CONSTANTS====================== """
+uptime = await dcdef.get_readable_time((time.time() - Lastupdate))
 pm_caption = "** ʟᴜᴄɪғ𝟹ʀʜᴜɴ's ᴜsᴇʀʙᴏᴛ 𝙸𝚂 𝙾𝙽𝙻𝙸𝙽𝙴**\n\n"
 pm_caption += "**Yes Master, Am Alive And Systems Are Working Perfectly As It Should Be...**\n\n"
 pm_caption += "✘ About My System ✘\n\n"
