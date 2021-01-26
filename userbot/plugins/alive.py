@@ -28,9 +28,6 @@ ghanti = borg.uid
 edit_time = 5
 """ =======================CONSTANTS====================== """
 file1 = "https://telegra.ph/file/771b6db93ddc361f75a6e.jpg"
-file2 = "https://telegra.ph/file/771b6db93ddc361f75a6e.jpg"
-file3 = "https://telegra.ph/file/771b6db93ddc361f75a6e.jpg"
-file4 = "https://telegra.ph/file/771b6db93ddc361f75a6e.jpg"
 """ =======================CONSTANTS====================== """
 
 
@@ -53,27 +50,6 @@ async def hmm(yes):
     pm_caption += f"➾ **ᴜᴘᴛɪᴍᴇ** ☞ {uptime}\n\n"
     pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={ghanti})\n"
     on = await borg.send_file(yes.chat_id, file=file1,caption=pm_caption)
-
-    await asyncio.sleep(edit_time)
-    ok = await borg.edit_message(yes.chat_id, on, file=file2) 
-
-    await asyncio.sleep(edit_time)
-    ok2 = await borg.edit_message(yes.chat_id, ok, file=file3)
-
-    await asyncio.sleep(edit_time)
-    ok3 = await borg.edit_message(yes.chat_id, ok2, file=file1)
-    
-    await asyncio.sleep(edit_time)
-    ok4 = await borg.edit_message(yes.chat_id, ok3, file=file3)
-    
-    await asyncio.sleep(edit_time)
-    ok5 = await borg.edit_message(yes.chat_id, ok4, file=file2)
-    
-    await asyncio.sleep(edit_time)
-    ok6 = await borg.edit_message(yes.chat_id, ok5, file=file1)
-    
-    await asyncio.sleep(edit_time)
-    ok7 = await borg.edit_message(yes.chat_id, ok6, file=file4)
     await asyncio.sleep(5)
-    await yes.delete()
+    await event.delete()
 
