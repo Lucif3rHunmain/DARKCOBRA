@@ -49,7 +49,7 @@ if 1 == 1:
         user = await event.get_reply_message()
 
         chat = event.input_chat
-
+        await event.delete()
         if user:
 
             photos = await event.client.get_profile_photos(user.sender)
