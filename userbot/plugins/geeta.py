@@ -47,7 +47,7 @@ CMD_HELP.update(
     {
         "geeta":".verse <chapter_number> <verse_number> "
         "\nUsage: Get a specific verse from a particular chapter \n\n"
-        "geetahindi":".verse <chapter_number> <verse_number> hi"
+        ".verse <chapter_number> <verse_number> hi"
         "\nUsage: Get a specific verse from a particular chapter in hindi.\n\n"
     }
 )
