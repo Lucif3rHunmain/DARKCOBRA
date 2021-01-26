@@ -29,8 +29,8 @@ DEFAULTUSER = (
  )
 CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS A CRIME" 
 
-USER_BOT_WARN_ZERO = ("`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my f"{DEFAULTUSER}'s userbot⭕️.`\n**Now GTFO, My Master is busy**")
-USER_BOT_WARN_ZERO = ("`My master is currently not at Homs. Dont Spam My Master f"{DEFAULTUSER}'s Inbox this is your last warning. After which you will be reported and blocked. \n Have patience till my master comes online.`")
+USER_BOT_WARN_ZERO = (f"`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my {DEFAULTUSER}'s userbot⭕️.`\n**Now GTFO, My Master is busy**")
+USER_BOT_WARN_ZERO = (f"`My master is currently not at Homs. Dont Spam My Master {DEFAULTUSER}'s Inbox this is your last warning. After which you will be reported and blocked. \n Have patience till my master comes online.`")
 USER_BOT_NO_WARN = ("`Hello, This Is Lucif3rHun's Personal Antispam Userbot Service⚠️.You have found your way here to my sweet master's ,`"
                     f"{DEFAULTUSER}'s inbox, Dont spam else you will be reported and blocked. He is little busy right now. So please follow the below guidelines.\n"
                     f"\n**{CUSTOM_MIDDLE_PMP}**\n\n")
