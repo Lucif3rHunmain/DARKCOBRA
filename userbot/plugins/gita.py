@@ -1,14 +1,11 @@
 # Author: Shubhendra Kushwaha (@TheShubhendra)
 # Email: shubhendrakushwaha94@gmail.com
-import requests
 import pygita
-import os
-from userbot.utils import admin_cmd, edit_delete
-from userbot import CMD_HELP
-from userbot.uniborgConfig import Config
 
-CLIENT_ID = os.environ.get("GITA_CLIENT_ID", None)
-CLIENT_SECRET = os.environ.get("GITA_CLIENT_SECRET", None)
+from userbot.utils import admin_cmd
+
+CLIENT_ID = Config.GITA_CLIENT_ID
+CLIENT_SECRET = Config.GITA_CLIENT_SECRET
 """ Get API crendentials from https://bhagavadgita.io . """
 
 
@@ -16,7 +13,7 @@ CLIENT_SECRET = os.environ.get("GITA_CLIENT_SECRET", None)
 async def gita(event):
     """ To get a specific verse from a specific chapter in English. """
     if CLIENT_ID is None or CLIENT_SECRET is None:
-        await event.edit_delete(
+        await event.edit(
             event,
             "`Please add required GITA_CLIENT_SECRET and GITA_CLIENT_ID env var`",
             10,
@@ -33,7 +30,7 @@ async def gita(event):
 async def gita(event):
     """ To get a specific verse from a specific chapter in Hindi. """
     if CLIENT_ID is None or CLIENT_SECRET is None:
-        await event.edit_delete(
+        await event.edit(
             event,
             "`Please add required GITA_CLIENT_SECRET and GITA_CLIENT_ID env var`",
             10,
@@ -44,12 +41,3 @@ async def gita(event):
     verse_number = int(event.pattern_match.group(2))
     verse = pygita.get_verse(chapter_number, verse_number, language="hi")
     await event.edit(f"**{verse.text}** {verse.meaning}")
-
-CMD_HELP.update(
-    {
-        "geeta":".gita <chapter_number> <verse_number> "
-        "\nUsage: Get a specific verse from a particular chapter \n\n"
-        ".gita <chapter_number> <verse_number> hi"
-        "\nUsage: Get a specific verse from a particular chapter in hindi.\n\n"
-    }
-)
